@@ -45,6 +45,14 @@ farmer’s field from the user in feet.  Display the
 area of the field in acres.  
 Hint: There are 43,560 square feet in an acre
 """
+def area_of_a_field():
+    print("Area of Field")
+    width = float(input("Width: "))
+    length = float(input("Length: "))
+
+    areaOfAField = (width*length)/43560
+    areaOfAField = round(areaField, 2)
+    print("Area of the field is " + str(areaField) + " acres")
 
 """
 Exercise 5:  Bottle Deposits
