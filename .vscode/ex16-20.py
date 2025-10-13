@@ -9,7 +9,14 @@ module in your calculations.
 Hint:  The are of  circle is computed using the formula area = pi*r**2.  The 
 volume of a sphere is computed using the formula volume = 4/3 * pi * r**3.
 """
-
+def area_and_volume():
+    import math
+    r = float(input("Enter the radius: "))
+    area = 3.14 * r**2
+    volume = (4/3) * 3.14 * r**3
+    print("The area of the circle is: " + str(round(area, 2)))
+    print("The volume of the sphere is: " + str(round(volume, 2)))
+#area_and_volume()
 """
 Exercise 17:  Heat Capacity
 The amount of energy required to increase the temperature of one gram of 
@@ -35,7 +42,16 @@ Hint:  You will need to look up the factor for converting between Joules
 and kilowatt hours to complete the last part of this exercise.
 (25 lines)
 """
-
+def heat_capacity():
+    mass = float(input("Enter the mass of water in grams: "))
+    deltaT = float(input("Enter the temperature change in degrees Celsius: "))
+    C = 4.186
+    q = mass * C * deltaT
+    print("The total amount of energy required is: " + str(round(q, 2)) + " Joules")
+    cost_per_kwh = 0.089
+    joules_per_kwh = 3600000
+    cost = (q / joules_per_kwh) * cost_per_kwh
+    print("The cost of heating the water is: " + str(round(cost, 2)) + " dollars")
 """
 Exercise 18:  Volume of a Cylinder
 The volume of a cylinder can be computed by multiplying the area of its 
@@ -44,7 +60,12 @@ cylinder, along with its height, from the user and computes its volume.
 Display the result rounded to one decimal place.
 (15 lines)
 """
-
+def volume_of_a_cylinder():
+    radius = float(input("Enter the radius of the cylinder: "))
+    height = float(input("Enter the height of the cylinder: "))
+    volume = 3.14 * radius**2 * height
+    print("The volume of the cylinder is: " + str(round(volume, 1)))
+#volume_of_a_cylinder()
 """
 Exercise 19:  Free Fall
 Create a program that determines how quickly an object is traveling when it 
@@ -55,7 +76,12 @@ use the formula vf = (vi**2 + 2ad)**(1/2) to compute the final speed vf,
 when the initial speed, vi, acceleration, a, and distance, d, are known.
 (16 lines)
 """
-
+def free_fall():
+    height = float(input("Enter the height where the object is dropped: "))
+    g = 9.8
+    vf = (0**2 + 2*g*height)**(1/2)
+    print("The final speed of the object is: " + str(round(vf, 2)) + " m/s")
+#free_fall()
 
 """
 Exercise 20: Ideal Gas Law
@@ -80,6 +106,11 @@ by 5/9 and then add 273.15 to it.
 
 (19 lines)
 """
-
-if __name__ == "__main__":
-    print("Hi there!")
+def ideal_gas_law():
+    P = float(input("Enter the pressure: "))
+    V = float(input("Enter the volume: "))
+    T = float(input("Enter the temperature: ")) + 273.15
+    R = 8.314
+    n = (P * V) / (R * T)
+    print("The amount of gas in moles is: " + str(round(n, 2)))
+#ideal_gas_law()

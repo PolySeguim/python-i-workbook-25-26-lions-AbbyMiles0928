@@ -1,0 +1,99 @@
+"""
+Exercise 34: Even or Odd?
+Write a program that reads an integer from the user.
+Then your program should display a message indicating whether
+the integer is even or odd
+"""
+def even_odd():
+    # communication with the user is the most volatile part of the program
+    num = int(input("Enter a number: "))
+    if (num % 2 == 0):
+        print("The number is even.")
+    else:
+        print("The number is odd.")
+
+"""
+Exercise 36: Vowel or consonant
+In this exercise you will create a program that reads a letter
+of the alphabet from the user. If the user enters a, e, i, o, or u
+then your program should display a message indicating that the
+entered letter is a vowel. If the user enters y then your program
+should display a message indicating that sometimes y is a vowel, and
+sometimes y is a consonant. Otherwise your program should display
+a message indicating that the letter is a consonant.
+"""
+def vowel_consonant():
+    letter = input("Enter a letter: ")
+    if letter in ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'):
+        print("The letter is a vowel.")
+    else: print("The letter is a consonant.")
+"""
+Exercise 40: Name that triangle
+A triangle can be classified based on the lengths of its sides as
+equilateral, isosceles, or scalene. All 3 sides of an equilateral
+triangle have the same length. As isosceles triangle has two sides
+that are the same length, and a third side that is a different length.
+If all of the sides have different lengths then the triangle is scalene.
+Write a program that reads the lengths of 3 sides of a triangle from the
+user. Display a message indicating the type of triangle
+****** CHALLENGE:
+Perform the same task as above but with angles and not sides.
+"""
+def name_that_triangle():
+    side1 = float(input("Enter the length of side 1: "))
+    side2 = float(input("Enter the length of side 2: "))
+    side3 = float(input("Enter the length of side 3: "))
+    if side1 == side2 == side3:
+        print("The triangle is equilateral.")
+    elif side1 == side2 or side2 == side3 or side1 == side3:
+        print("The triangle is isosceles.")
+    else: print("The triangle is scalene.")
+
+def name_that_triangle_challenge():
+    angle1 = float(input("Enter the angle of side 1: "))
+    angle2 = float(input("Enter the angle of side 2: "))
+    angle3 = float(input("Enter the angle of side 3: "))
+    if angle1 == angle2 == angle3:
+        print("The triangle is equilateral.")
+    elif angle1 == angle2 or angle2 == angle3 or angle1 == angle3:
+        print("The triangle is isosceles.")
+    else: print("The triangle is scalene.")
+
+"""
+Exercise 55: Cell Phone Bill
+A particular cell phone plan includes 50 minutes of air time and
+50 text messages for $15.00 a month. Each additional minute of
+air time costs $0.25 , while additional text messages cost $0.15
+each. All cell phone bills include an additional charge of $0.44
+to support 911 call centers, and the entire bill (including the
+911 charge) is subject to a 5 percent sales tax.
+Write a program that reads the number of minutes and text messages
+used in a month from the user. Display the base charge, additional
+minutes charge (if any), additional text message charge (if any),
+the 911 fee, tax and total bill amount. Only display the additional
+minute and text charges if the user incurred costs in these
+categories. Ensure that all of the charges are displayed using 2
+decimal points
+"""
+def cell_phone_bill():
+    minutes = int(input("Enter the number of extra minuntes: "))
+    texts = int(input("Enter the number extra text messages: "))
+    base_charge = 15.00
+    additional_air_time_charge = minutes * 0.25
+    additional_text_charge = texts * 0.15
+    support_911_charge = 0.44
+    sales_tax_total = base_charge + additional_air_time_charge + additional_text_charge + support_911_charge
+    sales_tax = sales_tax_total * 0.05
+    total = round(base_charge + additional_air_time_charge + additional_text_charge + support_911_charge + sales_tax, 2)
+    print("Your total bill is: " + str(total))
+
+
+
+# TEST SUITE
+#for i in range(5):
+    #even_odd()
+    #vowel_consonant()
+    #name_that_triangle()
+    #name_that_triangle_challenge()
+    
+cell_phone_bill()

@@ -6,14 +6,19 @@ address formatted in the manner that you would usually see it
 on the outside of an envelope.  Your program does not need to 
 read any input from the user.  (9 lines)
 """
-
+def mailingAddress():
+    print("Your Name")
+    print("1234 Your Street")
+    print("Your City, ST 12345")
 """
 Exercise 2:  Hello
 Write a program that asks the user to enter his or her name.  
 The program should respond with a message that says hello to 
 the user, using his or her name.  (9 lines)
 """
-
+def hello():
+    name = input("Enter your name: ")
+    print("Hello " + name)
 """
 Exercise 3:  Area of a Room
 Write a program that asks the user to enter the width and 
@@ -40,6 +45,14 @@ farmer’s field from the user in feet.  Display the
 area of the field in acres.  
 Hint: There are 43,560 square feet in an acre
 """
+def area_of_a_field():
+    print("Area of Field")
+    width = float(input("Width: "))
+    length = float(input("Length: "))
+
+    areaOfAField = (width*length)/43560
+    areaOfAField = round(areaField, 2)
+    print("Area of the field is " + str(areaField) + " acres")
 
 """
 Exercise 5:  Bottle Deposits
